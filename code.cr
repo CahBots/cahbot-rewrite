@@ -37,9 +37,10 @@ client.on_message_create do |payload|
 end
 
 client.on_message_create do |payload, *args|
-  stuff = Urban.define("#{args.join(" ")}")
-  begin
-    client.create_message(payload.channel_id, "First result for #{args.join(" ")}
+  if payload.content.starts_with? PREFIX + "urban"
+    stuff = Urban.define("#{args.join(" ")}")
+    begin
+      client.create_message(payload.channel_id, "First result for #{args.join(" ")}
 
 Author: #{stuff.list.first.author}
 Definition: #{stuff.list.first.definition}
@@ -47,8 +48,9 @@ Example: *#{stuff.list.first.example}*
 
 :thumbsup: - #{stuff.list.first.thumbs_up}
 :thumbsdown: - #{stuff.list.first.thumbs_down}")
-  rescue
-    client.create_message(payload.channel_id, "Some sort of error occured, oh well")
+    rescue
+      client.create_message(payload.channel_id, "Some sort of error occured, oh well")
+    end
   end
 end
 
