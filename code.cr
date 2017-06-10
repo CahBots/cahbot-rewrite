@@ -38,7 +38,7 @@ end
 
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "urban"
-    if payload.content.split.count == 1
+    if payload.content.size == 7
       stuff = Urban.define("#{payload.content[8..-1]}")
       begin
         client.create_message(payload.channel_id, "First result for `#{payload.content[8..-1]}`
