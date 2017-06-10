@@ -46,5 +46,7 @@ __Cah's Commands__
 __Other Commands__
 `A^ping`: Makes sure the bot is even alive
 `A^cmds`: This")
+  end
+end
 
 client.run
