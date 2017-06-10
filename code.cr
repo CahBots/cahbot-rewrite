@@ -53,8 +53,8 @@ Example: *#{stuff.list.first.example}*
       rescue
         client.create_message(payload.channel_id, "Some sort of error occured, oh well")
       end
-    else
-    client.create_message(payload.channel_id, "Please specify a term to look up on UD, thanks")
+    elsif payload.content[8..-1] == nil
+      client.create_message(payload.channel_id, "Please specify a term to look up on UD, thanks")
     end
   end
 end
