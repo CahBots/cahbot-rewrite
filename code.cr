@@ -38,9 +38,10 @@ end
 
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "urban"
-    stuff = Urban.define("#{payload.content[8..-1]}")
-    begin
-      client.create_message(payload.channel_id, "First result for `#{payload.content[8..-1]}`
+    if payload.content[8..-1] != nil
+      stuff = Urban.define("#{payload.content[8..-1]}")
+      begin
+        client.create_message(payload.channel_id, "First result for `#{payload.content[8..-1]}`
 
 Word/Term: #{stuff.list.first.word}
 Author: #{stuff.list.first.author}
@@ -49,9 +50,11 @@ Example: *#{stuff.list.first.example}*
 
 :thumbsup: - #{stuff.list.first.thumbs_up}
 :thumbsdown: - #{stuff.list.first.thumbs_down}")
-    rescue => e
-      client.create_message(payload.channel_id, "Some sort of error occured, oh well, here's the error: #{e}")
-    end
+      rescue
+        client.create_message(payload.channel_id, "Some sort of error occured, oh well")
+      end
+    else
+    client.create_message(payload.channel_id, "Please specify a term to look up on UD, thanks")  
   end
 end
 
