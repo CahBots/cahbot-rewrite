@@ -40,8 +40,9 @@ client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "urban"
     stuff = Urban.define("#{payload.content[8..-1]}")
     begin
-      client.create_message(payload.channel_id, "First result for #{payload.content[8..-1]}
+      client.create_message(payload.channel_id, "First result for `#{payload.content[8..-1]}`
 
+Word/Term: #{stuff.list.first.word}
 Author: #{stuff.list.first.author}
 Definition: #{stuff.list.first.definition}
 Example: *#{stuff.list.first.example}*
