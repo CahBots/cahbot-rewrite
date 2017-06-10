@@ -38,7 +38,7 @@ end
 
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "urban"
-    if payload.content[8..-1] != nil
+    if payload.content.split.count == 1
       stuff = Urban.define("#{payload.content[8..-1]}")
       begin
         client.create_message(payload.channel_id, "First result for `#{payload.content[8..-1]}`
@@ -53,7 +53,7 @@ Example: *#{stuff.list.first.example}*
       rescue
         client.create_message(payload.channel_id, "Some sort of error occured, oh well")
       end
-    elsif payload.content[8..-1] == nil
+    else
       client.create_message(payload.channel_id, "Please specify a term to look up on UD, thanks")
     end
   end
