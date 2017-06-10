@@ -36,11 +36,11 @@ client.on_message_create do |payload|
   end
 end
 
-client.on_message_create do |payload, *args|
+client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "urban"
-    stuff = Urban.define("#{args.join(" ")}")
+    stuff = Urban.define("#{payload.content[6..-1]}")
     begin
-      client.create_message(payload.channel_id, "First result for #{args.join(" ")}
+      client.create_message(payload.channel_id, "First result for #{[payload.content[6..-1]}
 
 Author: #{stuff.list.first.author}
 Definition: #{stuff.list.first.definition}
