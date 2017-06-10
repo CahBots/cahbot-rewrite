@@ -49,7 +49,7 @@ Example: *#{stuff.list.first.example}*
 
 :thumbsup: - #{stuff.list.first.thumbs_up}
 :thumbsdown: - #{stuff.list.first.thumbs_down}")
-    rescue
+    rescue Rip
       client.create_message(payload.channel_id, "Some sort of error occured, oh well")
     end
   end
@@ -65,7 +65,8 @@ __Cah's Commands__
 
 __Other Commands__
 `A^ping`: Makes sure the bot is even alive
-`A^cmds`: This")
+`A^cmds`: This
+`A^urban <term>`: Pops up the first result in Urban Dictionary")
   end
 end
 
