@@ -1,0 +1,15 @@
+name: cahbot-alpha
+version: 0.1.0
+
+authors:
+  - name <2003cah@gmail.com>
+
+description: |
+  No, not the hecking card game (now in Crystal)
+
+dependencies:
+  discordcr:
+    github: meew0/discordcr
+    branch: master
+
+license: MIT
