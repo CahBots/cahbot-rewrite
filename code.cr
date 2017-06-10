@@ -49,8 +49,8 @@ Example: *#{stuff.list.first.example}*
 
 :thumbsup: - #{stuff.list.first.thumbs_up}
 :thumbsdown: - #{stuff.list.first.thumbs_down}")
-    rescue Rip
-      client.create_message(payload.channel_id, "Some sort of error occured, oh well")
+    rescue => e
+      client.create_message(payload.channel_id, "Some sort of error occured, oh well, here's the error: #{e}")
     end
   end
 end
