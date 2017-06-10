@@ -44,6 +44,7 @@ __Cah's Commands__
 `A^restart`: Kills the bot, pulls some code, and reboots
 
 __Other Commands__
-`A^ping`: Makes sure the bot is even alive")
+`A^ping`: Makes sure the bot is even alive
+`A^cmds`: This")
 
 client.run
