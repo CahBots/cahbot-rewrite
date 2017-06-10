@@ -1,5 +1,5 @@
 require "discordcr"
-require 'urban'
+require "urban"
 require "./pepperoni_secrets.cr"
 
 client = Discord::Client.new(token: TOKEN, client_id: 291390171151335424_u64)
