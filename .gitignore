@@ -1,3 +1,4 @@
 pepperoni_secrets.cr
 shard.lock
 /.shards
+/.lib
