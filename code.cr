@@ -10,6 +10,10 @@ PREFIX = "A^"
 
 START = Time.utc_now
 
+client.on_ready do |things|
+  client.create_message(287050338144616449_u64, "Annnnnnd we're r-r-ready, woot")
+end
+
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "ping"
     m = client.create_message(payload.channel_id, "Pong!")
