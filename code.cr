@@ -1,6 +1,8 @@
 require "discordcr"
 require "urban"
 require "./pepperoni_secrets.cr"
+require "db"
+require "pg"
 
 client = Discord::Client.new(token: TOKEN, client_id: 291390171151335424_u64)
 
@@ -52,8 +54,8 @@ Example: *#{stuff.list.first.example}*
 
 :thumbsup: - #{stuff.list.first.thumbs_up}
 :thumbsdown: - #{stuff.list.first.thumbs_down}")
-      rescue
-        client.create_message(payload.channel_id, "Some sort of error occured, oh well")
+      rescue e
+        client.create_message(payload.channel_id, "Some sort of error occured, here it is, `#{e}`")
       end
     else
       client.create_message(payload.channel_id, "Please specify a term to look up on UD, thanks")
