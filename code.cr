@@ -69,7 +69,7 @@ client.on_message_create do |payload|
         client.create_message(payload.channel_id, "```
 #{`#{payload.content[10..-1]}`}
 ```
-Executed in about #{time.total_milliseconds.round(0)}ms")
+Executed in about #{(Time.utc_now - payload.timestamp).total_milliseconds.round(0)}ms")
       rescue e
         client.create_message(payload.channel_id, "```
 #{e}
@@ -79,6 +79,15 @@ Executed in about #{time.total_milliseconds.round(0)}ms")
     else
       client.create_message(payload.channel_id, "https://youtu.be/Hwz7YN1AQmQ")
     end
+  end
+end
+
+client.on_message_create do |payload|
+  if payload.content.starts_with? PREFIX + "info"
+    m = client.create_message(payload.channel_id, "**info**
+
+The bot's uptime: About #{(START - m.timestamp).total_hours}
+The server's uptime: #{`uptime | awk -F'( |,|:)+' '{print $6,$7",",$8,"hours,",$9,"minutes."}'`}")
   end
 end
 
