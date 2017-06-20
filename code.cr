@@ -68,7 +68,7 @@ client.on_message_create do |payload|
       client.create_message(payload.channel_id, "Executed the console command in about #{time.total_milliseconds.round(0)}ms
 
 ```
-#{`payload.content[10..-1]`}
+#{`#{payload.content[10..-1]}`}
 ```")
     else
       client.create_message(payload.channel_id, "https://youtu.be/Hwz7YN1AQmQ")
