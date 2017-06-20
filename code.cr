@@ -93,7 +93,7 @@ client.on_message_create do |payload|
     client.create_message(payload.channel_id, "**info**
 
 The bot's uptime: About #{(START - payload.timestamp).total_hours}
-The server's uptime: #{`uptime | awk -F'( |,|:)+' '{print $6,$7",",$8,"hours,",$9,"minutes."}'`}")
+The server's uptime: #{`uptime -p`}")
   end
 end
 
