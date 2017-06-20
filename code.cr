@@ -65,11 +65,17 @@ client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "console"
     if payload.author.id == 228290433057292288_u64
       time = Time.utc_now - payload.timestamp
-      client.create_message(payload.channel_id, "Executed the console command in about #{time.total_milliseconds.round(0)}ms
-
-```
+      begin
+        client.create_message(payload.channel_id, "```
 #{`#{payload.content[10..-1]}`}
-```")
+```
+Executed in about #{time.total_milliseconds.round(0)}ms")
+      rescue e
+        client.create_message(payload.channel_id, "```
+#{e}
+```
+Executed in about #{time.total_milliseconds.round(0)}ms")
+      end
     else
       client.create_message(payload.channel_id, "https://youtu.be/Hwz7YN1AQmQ")
     end
