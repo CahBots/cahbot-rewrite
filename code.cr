@@ -72,15 +72,13 @@ client.on_message_create do |payload|
     if payload.author.id == 228290433057292288_u64
       time = Time.utc_now - payload.timestamp
       begin
-        ioo = MemoryIO.new
-        Process.run("#{payload.content[10..-1]}", shell: true, output: io)
         client.create_message(payload.channel_id, "```
-#{ioo.to_s}
+#{Process.run(payload.content[10..-1], shell:true, output: io)}
 ```
 Executed in about #{(Time.utc_now - payload.timestamp).total_milliseconds.round(0)}ms")
       rescue e
         client.create_message(payload.channel_id, "```
-some fatal error happened that it didn't work I guess
+Something went so wrong that this message had to trigger
 ```
 Executed in about #{time.total_milliseconds.round(0)}ms")
       end
@@ -98,6 +96,7 @@ The bot's uptime: About #{(START - payload.timestamp).total_hours}
 The server's uptime: #{`uptime -p`}")
   end
 end
+
 
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "help"
