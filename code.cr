@@ -72,13 +72,15 @@ client.on_message_create do |payload|
     if payload.author.id == 228290433057292288_u64
       time = Time.utc_now - payload.timestamp
       begin
+        io = MemoryIO.new
+        Process.run(payload.content[10..-1], shell: true, output: io)
         client.create_message(payload.channel_id, "```
-#{`#{payload.content[10..-1]}`}
+#{io.to_s}
 ```
 Executed in about #{(Time.utc_now - payload.timestamp).total_milliseconds.round(0)}ms")
       rescue e
         client.create_message(payload.channel_id, "```
-#{e}
+some fatal error happened that it didn't work I guess
 ```
 Executed in about #{time.total_milliseconds.round(0)}ms")
       end
