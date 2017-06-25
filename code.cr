@@ -73,7 +73,7 @@ client.on_message_create do |payload|
       time = Time.utc_now - payload.timestamp
       begin
         client.create_message(payload.channel_id, "```
-#{Process.run(payload.content[10..-1], shell: true, output: Stdio)}
+#{Process.run(payload.content[10..-1], shell: true, output: IO)}
 ```
 Executed in about #{(Time.utc_now - payload.timestamp).total_milliseconds.round(0)}ms")
       rescue e
