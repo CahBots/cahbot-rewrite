@@ -73,7 +73,7 @@ client.on_message_create do |payload|
       time = Time.utc_now - payload.timestamp
       begin
         io = MemoryIO.new
-        Process.run("#{payload.content[10..-1]}, shell: true, output: io)
+        Process.run("#{payload.content[10..-1]}", shell: true, output: io)
         client.create_message(payload.channel_id, "```
 #{io.to_s}
 ```
