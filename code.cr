@@ -74,8 +74,9 @@ client.on_message_create do |payload|
       begin
         io = IO::Memory.new
         Process.run(payload.content[10..-1], shell: true, output: io)
+        output = io.to_s
         client.create_message(payload.channel_id, "```
-#{io.to_s}
+#{output}
 ```
 Executed in about #{(Time.utc_now - payload.timestamp).total_milliseconds.round(0)}ms")
       rescue e
