@@ -1,0 +1,8 @@
+theme: jekyll-theme-midnight
+
+title: CahBot-Rewrite
+description: Now in c r y t s a l
+show_downloads: false
+
+gems:
+  - jekyll-mentions
