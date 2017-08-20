@@ -100,6 +100,14 @@ The server's uptime: #{`uptime -p`}")
   end
 end
 
+client.on_message_create do |payload|
+  if payload.content.starts_with? PREFIX + "noot"
+    client.create_message(payload.channel_id, "NOOT https://s-media-cache-ak0.pinimg.com/originals/fe/cb/80/fecb80585eca20163a4d57fa281610b8.gif")
+  end
+end
+
+client.run
+
 
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "help"
@@ -113,6 +121,7 @@ __Cah's Commands__
 __Other Commands__
 `A^ping`: Makes sure the bot is even alive
 `A^cmds`: This
+`A^noot`: NOOT
 `A^urban <term>`: Pops up the first result in Urban Dictionary")
   end
 end
