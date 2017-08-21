@@ -8,6 +8,7 @@ Command | Description
 --------|--------
 `A^ping` | Makes sure the bot is even alive.
 `A^cmds` | Lists commands.
+`A^noot` | ***[NOOT INTENSIFIES]***
 `A^urban <term>` | Searches Urban Dictionary and returns first definition.
 
 ## Owner (CAH ONLY) Commands
