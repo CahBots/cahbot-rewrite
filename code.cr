@@ -102,7 +102,7 @@ end
 
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "noot"
-    client.create_message(payload.channel_id, "NOOT https://s-media-cache-ak0.pinimg.com/originals/fe/cb/80/fecb80585eca20163a4d57fa281610b8.gif")
+    client.create_message(payload.channel_id, "**NOOT** http://cahbot.pro/noot.gif")
   end
 end
 
