@@ -118,7 +118,7 @@ __Cah's Commands__
 __Other Commands__
 `A^ping`: Makes sure the bot is even alive
 `A^cmds`: This
-`A^noot`: NOOT
+`A^noot`: ***[NOOT INTENSIFIES]***
 `A^urban <term>`: Pops up the first result in Urban Dictionary")
   end
 end
