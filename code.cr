@@ -106,9 +106,6 @@ client.on_message_create do |payload|
   end
 end
 
-client.run
-
-
 client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "help"
     client.create_message(payload.channel_id, "Oh, hey, this is the rewritten version of CahBot, and here are the commands thus far
