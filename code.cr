@@ -95,7 +95,7 @@ client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "info"
     client.create_message(payload.channel_id, "**info**
 
-The bot's uptime: About #{(start - Time.utc_now).total_hours}
+The bot's uptime: About #{(Time.now - start).total_hours}
 The server's uptime: #{`uptime -p`}")
   end
 end
