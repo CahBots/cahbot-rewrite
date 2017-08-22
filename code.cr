@@ -110,10 +110,10 @@ client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "userinfo"
     client.create_message(payload.channel_id, "**__User Info For You__**
 
-**User ID:** `#{event.user.id}`
-**User Discrim:** `#{event.user.discrim}`
-**Username:** `#{event.user.name}`
-**User Avatar:** https://cdn.discordapp.com/avatars/#{event.user.id}/#{event.user.avatar_id}.webp?size=1024")
+**User ID:** `#{payload.author.id}`
+**User Discrim:** `#{payload.author.discriminator}`
+**Username:** `#{payload.author.username}`
+**User Avatar:** #{payload.author.avatar}")
   end
 end
 
