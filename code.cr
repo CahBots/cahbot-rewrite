@@ -8,7 +8,7 @@ client = Discord::Client.new(token: TOKEN, client_id: 291390171151335424_u64)
 
 PREFIX = "A^"
 
-START = Time.utc_now
+start = Time.utc_now
 
 client.on_ready do |things|
   client.create_message(287050338144616449_u64, "Annnnnnd we're r-r-ready, woot")
@@ -95,7 +95,7 @@ client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "info"
     client.create_message(payload.channel_id, "**info**
 
-The bot's uptime: About #{(START - payload.timestamp).total_hours}
+The bot's uptime: About #{(start - Time.utc_now).total_hours}
 The server's uptime: #{`uptime -p`}")
   end
 end
