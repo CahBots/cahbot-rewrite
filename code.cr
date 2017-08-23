@@ -113,7 +113,7 @@ client.on_message_create do |payload|
 **User ID:** `#{payload.author.id}`
 **User Discrim:** `#{payload.author.discriminator}`
 **Username:** `#{payload.author.username}`
-**User Avatar:** #{payload.author.avatar}")
+**User Avatar:** https://cdn.discordapp.com/avatars/#{payload.author.id}/#{payload.author.avatar}.webp?size=1024")
   end
 end
 
