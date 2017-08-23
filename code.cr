@@ -113,6 +113,10 @@ client.on_message_create do |payload|
 **User ID:** `#{payload.author.id}`
 **User Discrim:** `#{payload.author.discriminator}`
 **Username:** `#{payload.author.username}`
+<<<<<<< HEAD
+=======
+**User Nickname:** `#{client.get_guild_member((client.get_channel(payload.channel_id).guild_id)_u64, payload.author.id).nick}`
+>>>>>>> parent of d2ac961... .
 **User Avatar:** https://cdn.discordapp.com/avatars/#{payload.author.id}/#{payload.author.avatar}.webp?size=1024")
   end
 end
