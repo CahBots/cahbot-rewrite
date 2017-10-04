@@ -107,6 +107,12 @@ client.on_message_create do |payload|
 end
 
 client.on_message_create do |payload|
+  if payload.content.starts_with? PREFIX + "invite"
+    client.create_message(payload.channel_id, "To invite me to your server, head over here: <https://crystal.cahbot.pro/invite>")
+  end
+end
+
+client.on_message_create do |payload|
   if payload.content.starts_with? PREFIX + "userinfo"
     client.create_message(payload.channel_id, "**__User Info For You__**
 
