@@ -6,7 +6,7 @@ require "pg"
 
 client = Discord::Client.new(token: TOKEN, client_id: 291390171151335424_u64)
 
-PREFIX = "A^"
+PREFIX = "C^"
 
 start = Time.utc_now
 

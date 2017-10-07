@@ -11,5 +11,11 @@ dependencies:
   discordcr:
     github: meew0/discordcr
     branch: master
+dependencies:
+  urban:
+    github: z64/urban
+dependencies:
+  pg:
+    github: will/crystal-pg
 
 license: MIT
