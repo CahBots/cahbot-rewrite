@@ -8,9 +8,10 @@ client = Discord::Client.new(token: TOKEN, client_id: 291390171151335424_u64)
 
 PREFIX = "C^"
 
-start = Time.utc_now
+START = Time.utc_now
 
 client.on_ready do |things|
+  client.status_update(game : "New and Improved I guess")
   client.create_message(287050338144616449_u64, "Annnnnnd we're r-r-ready, woot")
 end
 
