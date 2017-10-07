@@ -11,7 +11,7 @@ PREFIX = "C^"
 START = Time.utc_now
 
 client.on_ready do |things|
-  client.status_update(game : Discord::GamePlaying.name = "New and Improved I guess")
+  client.status_update(game = "New and Improved I guess")
   client.create_message(287050338144616449_u64, "Annnnnnd we're r-r-ready, woot")
 end
 
