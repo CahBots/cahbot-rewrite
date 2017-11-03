@@ -129,16 +129,16 @@ client.on_message_create do |payload|
     client.create_message(payload.channel_id, "Oh, hey, this is the rewritten version of CahBot, and here are the commands thus far
 
 __Cah's Commands__
-`A^die`: Kills the bot
-`A^restart`: Kills the bot, pulls some code, and reboots
-`A^console`: Do things in the console
+`C^die`: Kills the bot
+`C^restart`: Kills the bot, pulls some code, and reboots
+`C^console`: Do things in the console
 
 __Other Commands__
 (upon saying "CBC prefix") reminds you the prefix
-`A^ping`: Makes sure the bot is even alive
-`A^help`: This
-`A^noot`: ***[NOOT INTENSIFIES]***
-`A^urban <term>`: Pops up the first result in Urban Dictionary")
+`C^ping`: Makes sure the bot is even alive
+`C^help`: This
+`C^noot`: ***[NOOT INTENSIFIES]***
+`C^urban <term>`: Pops up the first result in Urban Dictionary")
   end
 end
 
