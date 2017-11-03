@@ -134,10 +134,17 @@ __Cah's Commands__
 `A^console`: Do things in the console
 
 __Other Commands__
+(upon saying "CBC prefix") reminds you the prefix
 `A^ping`: Makes sure the bot is even alive
 `A^help`: This
 `A^noot`: ***[NOOT INTENSIFIES]***
 `A^urban <term>`: Pops up the first result in Urban Dictionary")
+  end
+end
+
+client.on_message_create do |payload|
+  if payload.content.starts_with? "CBC prefix"
+    client.create_message(payload.channel_id, "My prefix is `C^`. For help, do `C^help`")
   end
 end
 
