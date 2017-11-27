@@ -134,7 +134,7 @@ __Cah's Commands__
 `C^console`: Do things in the console
 
 __Other Commands__
-(upon saying \"CBC prefix\") reminds you the prefix
+(upon saying \"CBC prefix\" reminds you the prefix)
 `C^ping`: Makes sure the bot is even alive
 `C^help`: This
 `C^noot`: ***[NOOT INTENSIFIES]***
